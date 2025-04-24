@@ -1,93 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Juan Pablo Zapata | Portafolio Profesional</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <div class="container">
-      <h1>Juan Pablo Zapata Chavarriga</h1>
-      <p>Analista de Datos | Administrador de Empresas</p>
-      <nav>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#educacion">Educación</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p>Soy Administrador de Empresas con especialización en curso en Ciencia de Datos e Inteligencia Artificial. Me apasiona resolver problemas con datos y mejorar procesos estratégicos. Domino herramientas como Power BI, SQL, Python y Excel, con experiencia en automatización, visualización de datos y toma de decisiones basada en análisis.</p>
-    </section>
-
-    <section id="experiencia">
-      <h2>Experiencia</h2>
-      <div class="item">
-        <h3>Analista de Desarrollo Humano — Colombiana de Comercio S.A. (2022 - 2025)</h3>
-        <ul>
-          <li>Diseñé dashboards en Power BI, mejorando decisiones en un 30%.</li>
-          <li>Automatización de reportes en Excel y SQL (reducción del 50% en tiempos).</li>
-          <li>Implementé un chatbot en Infobip, optimizando consultas internas en un 40%.</li>
-          <li>Lideré capacitaciones para fomentar adopción tecnológica.</li>
-        </ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juan Pablo Zapata | Portafolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+      body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+      .fade-up { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+      .fade-up.show { opacity: 1; transform: translateY(0); }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800">
+    <header class="bg-gradient-to-r from-blue-900 to-blue-600 text-white py-10">
+      <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold">Juan Pablo Zapata</h1>
+        <p class="text-lg mt-2">Analista de Datos | Administrador de Empresas</p>
+        <nav class="mt-4 space-x-6">
+          <a href="#sobre-mi" class="hover:underline">Sobre mí</a>
+          <a href="#experiencia" class="hover:underline">Experiencia</a>
+          <a href="#educacion" class="hover:underline">Educación</a>
+          <a href="#habilidades" class="hover:underline">Habilidades</a>
+          <a href="#contacto" class="hover:underline">Contacto</a>
+        </nav>
       </div>
-      <div class="item">
-        <h3>Auxiliar de Desarrollo Humano — Colombiana de Comercio S.A. (2021 - 2022)</h3>
-        <ul>
-          <li>Optimicé dashboards de seguimiento de desempeño.</li>
-          <li>Gestioné presupuestos y gastos con Excel y Power BI.</li>
-        </ul>
-      </div>
-      <div class="item">
-        <h3>Aprendiz Universitario — Colombiana de Comercio S.A. (2020 - 2021)</h3>
-        <ul>
-          <li>Implementación de SAP para 3.000 empleados.</li>
-          <li>Dashboards de seguimiento de indicadores.</li>
-        </ul>
-      </div>
-    </section>
+    </header>
 
-    <section id="educacion">
-      <h2>Educación</h2>
-      <p><strong>Especialización en Ciencia de Datos e Inteligencia Artificial</strong> — Universidad de Medellín (En curso, 2025)</p>
-      <p><strong>Administración de Empresas</strong> — Universidad Católica Luis Amigó (2017 - 2021)</p>
-    </section>
+    <main class="container mx-auto px-4 py-10 space-y-16">
+      <section id="sobre-mi" class="fade-up">
+        <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
+        <p>Soy Administrador de Empresas con especialización en Ciencia de Datos e Inteligencia Artificial. Me apasiona resolver problemas con datos y mejorar procesos estratégicos. Domino herramientas como Power BI, SQL, Python y Excel.</p>
+      </section>
 
-    <section id="habilidades">
-      <h2>Habilidades</h2>
-      <ul class="habilidades">
-        <li>Power BI</li>
-        <li>Excel</li>
-        <li>SQL</li>
-        <li>Python</li>
-        <li>Visualización de datos</li>
-        <li>Gestión de proyectos</li>
-        <li>Pensamiento analítico</li>
-        <li>Comunicación efectiva</li>
-        <li>Orientación a resultados</li>
-        <li>Adaptabilidad</li>
-      </ul>
-    </section>
+      <section id="experiencia" class="fade-up">
+        <h2 class="text-3xl font-bold mb-4">Experiencia</h2>
+        <div class="grid gap-6">
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <h3 class="text-xl font-semibold">Analista de Desarrollo Humano</h3>
+            <p class="text-sm text-gray-500">Colombiana de Comercio S.A. | 2022 - 2025</p>
+            <ul class="list-disc ml-5 mt-2 space-y-1">
+              <li>Dashboards Power BI para decisiones (mejora 30%).</li>
+              <li>Automatización de reportes con SQL y Excel (50% menos tiempo).</li>
+              <li>Chatbot en Infobip (+40% eficiencia en consultas).</li>
+            </ul>
+          </div>
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <h3 class="text-xl font-semibold">Auxiliar de Desarrollo Humano</h3>
+            <p class="text-sm text-gray-500">Colombiana de Comercio S.A. | 2021 - 2022</p>
+            <ul class="list-disc ml-5 mt-2 space-y-1">
+              <li>Optimización de dashboards y reportes de desempeño.</li>
+              <li>Soporte en SAP y control presupuestal.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p><strong>Teléfono:</strong> +57 320 798 8371</p>
-      <p><strong>Email:</strong> <a href="mailto:juanpablozch@gmail.com">juanpablozch@gmail.com</a></p>
-    </section>
-  </main>
+      <section id="educacion" class="fade-up">
+        <h2 class="text-3xl font-bold mb-4">Educación</h2>
+        <p><strong>Especialización en Ciencia de Datos e Inteligencia Artificial</strong> — Universidad de Medellín (En curso, 2025)</p>
+        <p><strong>Administración de Empresas</strong> — Universidad Católica Luis Amigó (2017 - 2021)</p>
+      </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Juan Pablo Zapata. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-</body>
+      <section id="habilidades" class="fade-up">
+        <h2 class="text-3xl font-bold mb-4">Habilidades</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full">Power BI</span>
+          <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full">Excel</span>
+          <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full">SQL</span>
+          <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full">Python</span>
+          <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full">Visualización</span>
+          <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full">Gestión de proyectos</span>
+        </div>
+      </section>
+
+      <section id="contacto" class="fade-up">
+        <h2 class="text-3xl font-bold mb-4">Contacto</h2>
+        <p>📞 +57 320 798 8371</p>
+        <p>📧 <a class="text-blue-700 hover:underline" href="mailto:juanpablozch@gmail.com">juanpablozch@gmail.com</a></p>
+      </section>
+    </main>
+
+    <footer class="bg-blue-900 text-white text-center py-6">
+      <p>&copy; 2025 Juan Pablo Zapata</p>
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('show');
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+  </body>
 </html>
+
