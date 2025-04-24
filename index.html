@@ -9,42 +9,38 @@
     <style>
       body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
 
+      /* Animaciones generales */
       .fade-up { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
       .fade-up.show { opacity: 1; transform: translateY(0); }
 
-      .scale-up { opacity: 0; transform: scale(0.9); transition: all 0.4s ease-in-out; }
+      .scale-up { opacity: 0; transform: scale(0.9); transition: all 0.6s ease-in-out; }
       .scale-up.show { opacity: 1; transform: scale(1); }
 
       .hover-scale:hover { transform: scale(1.1); transition: transform 0.3s ease-in-out; }
+      .hover-glow:hover { text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.7); transition: all 0.3s ease; }
 
-      a:hover {
-        color: #4fd1c5;
-        transition: color 0.3s ease;
-      }
-
-      .bg-gradient-hover:hover {
-        background: linear-gradient(45deg, #6b7280, #1f2937);
-        transition: background 0.3s ease-in-out;
-      }
+      .menu { display: none; }
+      .menu.open { display: block; }
+      .menu-item { transition: transform 0.2s ease-in-out; }
+      .menu-item:hover { transform: scale(1.1); }
 
       .text-glow:hover {
         text-shadow: 0 0 10px #4fd1c5, 0 0 20px #4fd1c5, 0 0 30px #4fd1c5;
         transition: text-shadow 0.3s ease;
       }
 
-      .click-expand {
-        transition: transform 0.3s ease-in-out;
-      }
-
-      .clicked {
-        transform: scale(1.5);
-      }
+      /* Menú deslizable */
+      .menu-toggle { cursor: pointer; }
+      .menu-container { position: fixed; top: 0; left: 0; height: 100%; width: 250px; background-color: rgba(0, 0, 0, 0.9); transform: translateX(-100%); transition: transform 0.3s ease-in-out; }
+      .menu-container.open { transform: translateX(0); }
+      .menu-container ul { list-style: none; padding: 20px; }
+      .menu-container li { padding: 10px 0; }
 
       .scroll-animation {
         transition: transform 0.3s ease-in-out;
       }
 
-      /* Animaciones cuando se hace scroll */
+      /* Animaciones al hacer scroll */
       .scroll-fade {
         opacity: 0;
         transition: opacity 0.5s ease;
@@ -53,12 +49,45 @@
       .scroll-fade.show {
         opacity: 1;
       }
+
+      /* Efecto al hacer clic en el nombre */
+      .click-expand {
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .clicked {
+        transform: scale(1.5);
+      }
+
+      /* Efectos de fondo dinámico */
+      .bg-gradient-hover:hover {
+        background: linear-gradient(45deg, #1f2937, #4b5563);
+        transition: background 0.3s ease-in-out;
+      }
+
+      /* Animación de iconos */
+      .icon:hover {
+        transform: rotate(360deg);
+        transition: transform 0.5s ease;
+      }
     </style>
   </head>
   <body class="bg-gray-900 text-gray-100">
 
+    <!-- Menú deslizable -->
+    <div id="menu" class="menu-container">
+      <ul>
+        <li><a href="#sobre-mi" class="menu-item hover-glow">Sobre mí</a></li>
+        <li><a href="#experiencia" class="menu-item hover-glow">Experiencia</a></li>
+        <li><a href="#educacion" class="menu-item hover-glow">Educación</a></li>
+        <li><a href="#habilidades" class="menu-item hover-glow">Habilidades</a></li>
+        <li><a href="#contacto" class="menu-item hover-glow">Contacto</a></li>
+      </ul>
+    </div>
+
     <header class="bg-gradient-to-r from-gray-800 to-gray-600 text-white py-10">
       <div class="container mx-auto text-center">
+        <div class="menu-toggle text-xl cursor-pointer" onclick="toggleMenu()">&#9776; Menú</div>
         <h1 id="nombre" class="text-4xl font-bold scale-up text-glow cursor-pointer">Juan Pablo Zapata</h1>
         <p class="text-lg mt-2">Analista de Datos | Administrador de Empresas</p>
         <nav class="mt-4 space-x-6">
@@ -120,8 +149,8 @@
 
       <section id="contacto" class="scroll-fade fade-up scale-up">
         <h2 class="text-3xl font-bold mb-4 text-white">Contacto</h2>
-        <p>📞 +57 320 798 8371</p>
-        <p>📧 <a class="text-gray-400 hover:underline" href="mailto:juanpablozch@gmail.com">juanpablozch@gmail.com</a></p>
+        <p>📞 +57 por ahora no </p>
+        <p>📧 <a class="text-gray-400 hover:underline" href="mailto:juanpablozch@gmail.com">por ahora no</a></p>
       </section>
     </main>
 
@@ -130,21 +159,27 @@
     </footer>
 
     <script>
-      // Efectos al hacer clic en el nombre
+      // Función para abrir y cerrar el menú
+      function toggleMenu() {
+        document.getElementById('menu').classList.toggle('open');
+      }
+
+      // Efecto de clic en el nombre
       document.getElementById("nombre").addEventListener("click", function() {
         this.classList.toggle("clicked");
       });
 
-      // Observadores para animación de scroll
+      // Observador de elementos al hacer scroll
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) entry.target.classList.add('show');
         });
       }, { threshold: 0.1 });
+
       document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
       document.querySelectorAll('.scale-up').forEach(el => observer.observe(el));
       document.querySelectorAll('.scroll-fade').forEach(el => observer.observe(el));
     </script>
   </body>
 </html>
-
+<!-- Fin del código HTML -->
