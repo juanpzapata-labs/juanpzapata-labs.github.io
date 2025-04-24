@@ -8,46 +8,62 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
     <style>
       body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+      
       .fade-up { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
       .fade-up.show { opacity: 1; transform: translateY(0); }
+
+      .scale-up { opacity: 0; transform: scale(0.9); transition: all 0.4s ease-in-out; }
+      .scale-up.show { opacity: 1; transform: scale(1); }
+
+      .hover-scale:hover { transform: scale(1.1); transition: transform 0.3s ease-in-out; }
+      
+      a:hover {
+        color: #4fd1c5;
+        transition: color 0.3s ease;
+      }
+
+      .bg-gradient-hover:hover {
+        background: linear-gradient(45deg, #6b7280, #1f2937);
+        transition: background 0.3s ease-in-out;
+      }
     </style>
   </head>
-  <body class="bg-gray-50 text-gray-800">
-    <header class="bg-gradient-to-r from-blue-900 to-blue-600 text-white py-10">
+  <body class="bg-gray-900 text-gray-100">
+    <header class="bg-gradient-to-r from-gray-800 to-gray-600 text-white py-10">
       <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold">Juan Pablo Zapata</h1>
+        <h1 class="text-4xl font-bold scale-up">Juan Pablo Zapata</h1>
         <p class="text-lg mt-2">Analista de Datos | Administrador de Empresas</p>
         <nav class="mt-4 space-x-6">
-          <a href="#sobre-mi" class="hover:underline">Sobre mí</a>
-          <a href="#experiencia" class="hover:underline">Experiencia</a>
-          <a href="#educacion" class="hover:underline">Educación</a>
-          <a href="#habilidades" class="hover:underline">Habilidades</a>
-          <a href="#contacto" class="hover:underline">Contacto</a>
+          <a href="#sobre-mi" class="hover:underline text-gray-300 hover-scale">Sobre mí</a>
+          <a href="#experiencia" class="hover:underline text-gray-300 hover-scale">Experiencia</a>
+          <a href="#educacion" class="hover:underline text-gray-300 hover-scale">Educación</a>
+          <a href="#habilidades" class="hover:underline text-gray-300 hover-scale">Habilidades</a>
+          <a href="#contacto" class="hover:underline text-gray-300 hover-scale">Contacto</a>
         </nav>
       </div>
     </header>
 
     <main class="container mx-auto px-4 py-10 space-y-16">
-      <section id="sobre-mi" class="fade-up">
-        <h2 class="text-3xl font-bold mb-4">Sobre mí</h2>
+      <section id="sobre-mi" class="fade-up scale-up">
+        <h2 class="text-3xl font-bold mb-4 text-white">Sobre mí</h2>
         <p>Soy Administrador de Empresas con especialización en Ciencia de Datos e Inteligencia Artificial. Me apasiona resolver problemas con datos y mejorar procesos estratégicos. Domino herramientas como Power BI, SQL, Python y Excel.</p>
       </section>
 
-      <section id="experiencia" class="fade-up">
-        <h2 class="text-3xl font-bold mb-4">Experiencia</h2>
+      <section id="experiencia" class="fade-up scale-up">
+        <h2 class="text-3xl font-bold mb-4 text-white">Experiencia</h2>
         <div class="grid gap-6">
-          <div class="bg-white shadow-md rounded-lg p-6">
+          <div class="bg-gray-800 shadow-md rounded-lg p-6 hover:scale-105 transition-all">
             <h3 class="text-xl font-semibold">Analista de Desarrollo Humano</h3>
-            <p class="text-sm text-gray-500">Colombiana de Comercio S.A. | 2022 - 2025</p>
+            <p class="text-sm text-gray-400">Colombiana de Comercio S.A. | 2022 - 2025</p>
             <ul class="list-disc ml-5 mt-2 space-y-1">
               <li>Dashboards Power BI para decisiones (mejora 30%).</li>
               <li>Automatización de reportes con SQL y Excel (50% menos tiempo).</li>
               <li>Chatbot en Infobip (+40% eficiencia en consultas).</li>
             </ul>
           </div>
-          <div class="bg-white shadow-md rounded-lg p-6">
+          <div class="bg-gray-800 shadow-md rounded-lg p-6 hover:scale-105 transition-all">
             <h3 class="text-xl font-semibold">Auxiliar de Desarrollo Humano</h3>
-            <p class="text-sm text-gray-500">Colombiana de Comercio S.A. | 2021 - 2022</p>
+            <p class="text-sm text-gray-400">Colombiana de Comercio S.A. | 2021 - 2022</p>
             <ul class="list-disc ml-5 mt-2 space-y-1">
               <li>Optimización de dashboards y reportes de desempeño.</li>
               <li>Soporte en SAP y control presupuestal.</li>
@@ -56,32 +72,32 @@
         </div>
       </section>
 
-      <section id="educacion" class="fade-up">
-        <h2 class="text-3xl font-bold mb-4">Educación</h2>
+      <section id="educacion" class="fade-up scale-up">
+        <h2 class="text-3xl font-bold mb-4 text-white">Educación</h2>
         <p><strong>Especialización en Ciencia de Datos e Inteligencia Artificial</strong> — Universidad de Medellín (En curso, 2025)</p>
         <p><strong>Administración de Empresas</strong> — Universidad Católica Luis Amigó (2017 - 2021)</p>
       </section>
 
-      <section id="habilidades" class="fade-up">
-        <h2 class="text-3xl font-bold mb-4">Habilidades</h2>
+      <section id="habilidades" class="fade-up scale-up">
+        <h2 class="text-3xl font-bold mb-4 text-white">Habilidades</h2>
         <div class="flex flex-wrap gap-2">
-          <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full">Power BI</span>
-          <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full">Excel</span>
-          <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full">SQL</span>
-          <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full">Python</span>
-          <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full">Visualización</span>
-          <span class="bg-blue-100 text-blue-800 px-4 py-1 rounded-full">Gestión de proyectos</span>
+          <span class="bg-gray-700 text-gray-300 px-4 py-1 rounded-full hover:scale-105 transition-all">Power BI</span>
+          <span class="bg-gray-700 text-gray-300 px-4 py-1 rounded-full hover:scale-105 transition-all">Excel</span>
+          <span class="bg-gray-700 text-gray-300 px-4 py-1 rounded-full hover:scale-105 transition-all">SQL</span>
+          <span class="bg-gray-700 text-gray-300 px-4 py-1 rounded-full hover:scale-105 transition-all">Python</span>
+          <span class="bg-gray-700 text-gray-300 px-4 py-1 rounded-full hover:scale-105 transition-all">Visualización</span>
+          <span class="bg-gray-700 text-gray-300 px-4 py-1 rounded-full hover:scale-105 transition-all">Gestión de proyectos</span>
         </div>
       </section>
 
-      <section id="contacto" class="fade-up">
-        <h2 class="text-3xl font-bold mb-4">Contacto</h2>
+      <section id="contacto" class="fade-up scale-up">
+        <h2 class="text-3xl font-bold mb-4 text-white">Contacto</h2>
         <p>📞 +57 320 798 8371</p>
-        <p>📧 <a class="text-blue-700 hover:underline" href="mailto:juanpablozch@gmail.com">juanpablozch@gmail.com</a></p>
+        <p>📧 <a class="text-gray-400 hover:underline" href="mailto:juanpablozch@gmail.com">juanpablozch@gmail.com</a></p>
       </section>
     </main>
 
-    <footer class="bg-blue-900 text-white text-center py-6">
+    <footer class="bg-gray-800 text-white text-center py-6">
       <p>&copy; 2025 Juan Pablo Zapata</p>
     </footer>
 
@@ -92,7 +108,7 @@
         });
       }, { threshold: 0.1 });
       document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+      document.querySelectorAll('.scale-up').forEach(el => observer.observe(el));
     </script>
   </body>
 </html>
-
